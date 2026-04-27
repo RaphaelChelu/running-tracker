@@ -38,21 +38,17 @@
 <style>
   main {
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
-    padding-bottom: 64px;
   }
 
   .tabbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 64px;
+    flex-shrink: 0;
     background: var(--bg);
     border-top: 1px solid var(--border);
     display: flex;
     z-index: 20;
-    padding-bottom: env(safe-area-inset-bottom);
+    padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
   }
 
   .tabbar button {
@@ -61,14 +57,15 @@
     border: none;
     color: var(--text-muted);
     font: inherit;
-    font-size: 11px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 4px;
     cursor: pointer;
     padding: 6px 0;
+    min-height: 56px;
   }
 
   .tabbar button.active {
